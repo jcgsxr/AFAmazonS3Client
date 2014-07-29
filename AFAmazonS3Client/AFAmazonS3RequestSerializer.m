@@ -194,7 +194,7 @@ static NSString * AFBase64EncodedStringFromData(NSData *data) {
                                 parameters:(NSDictionary *)parameters
                                      error:(NSError *__autoreleasing *)error
 {
-    return [[self requestBySettingAuthorizationHeadersForRequest:[super requestWithMethod:method URLString:URLString parameters:parameters error:error] error:error] mutableCopy];
+    return [[self requestBySettingAuthorizationHeadersForRequest:[super requestWithMethod:method URLString:URLString parameters:parameters] error:error] mutableCopy];
 }
 
 - (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method
@@ -203,7 +203,7 @@ static NSString * AFBase64EncodedStringFromData(NSData *data) {
                               constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
                                                   error:(NSError *__autoreleasing *)error
 {
-    return [[self requestBySettingAuthorizationHeadersForRequest:[super multipartFormRequestWithMethod:method URLString:URLString parameters:parameters constructingBodyWithBlock:block error:error] error:error] mutableCopy];
+    return [[self requestBySettingAuthorizationHeadersForRequest:[super multipartFormRequestWithMethod:method URLString:URLString parameters:parameters constructingBodyWithBlock:block] error:error] mutableCopy];
 }
 
 @end
